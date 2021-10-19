@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Temperature
+comment1.params=temperatureCelsius
+comment1.target=Temperature(float)
+comment2.params=
+comment2.target=Temperature()
+comment3.params=
+comment3.target=float\ getTemperatureCelcius()
+comment4.params=temperatureCelcius
+comment4.target=void\ setTemperatureCelcius(float)
+comment5.params=
+comment5.target=float\ getTemperatureKelvin()
+comment6.params=
+comment6.target=float\ getTemperatureFahrenheit()
+comment7.params=temperatureCelcius
+comment7.target=void\ updateTemperatureCelcius(float)
+comment8.params=temperatureKelvin
+comment8.target=void\ updateTemperatureKelvin(float)
+comment9.params=elementName
+comment9.target=java.lang.String\ getStateOfAggregation(java.lang.String)
+numComments=10

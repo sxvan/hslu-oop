@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Switchable
+comment1.params=
+comment1.target=void\ switchOn()
+comment2.params=
+comment2.target=void\ switchOff()
+comment3.params=
+comment3.target=boolean\ isSwitchedOn()
+comment4.params=
+comment4.target=boolean\ isSwitchedOff()
+numComments=5
