@@ -17,6 +17,4 @@ class DemoTest {
 
         assertEquals(b, result);
     }
-
-
 }
