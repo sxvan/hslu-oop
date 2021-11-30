@@ -14,6 +14,7 @@ public class Program {
         String input;
         Scanner scanner = new Scanner(System.in);
         do {
+            System.out.print("Please enter a temperature (celsius) or 'exit': ");
             input = scanner.next();
             try {
                 float value = Float.parseFloat(input);

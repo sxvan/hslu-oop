@@ -36,7 +36,7 @@ public class TemperatureCourse {
 
     public float getMaxCelsius() {
         if (this.temperatures.isEmpty()) {
-            return Integer.MIN_VALUE;
+            return Float.MIN_VALUE;
         }
 
         return Collections.max(this.temperatures).getCelsius();
@@ -48,7 +48,7 @@ public class TemperatureCourse {
 
     public float getMinCelsius() {
         if (this.temperatures.isEmpty()) {
-            return Integer.MAX_VALUE;
+            return Float.MAX_VALUE;
         }
 
         return Collections.min(this.temperatures).getCelsius();
@@ -59,6 +59,10 @@ public class TemperatureCourse {
     }
 
     public float getAverageCelsius() {
+        if (this.temperatures.isEmpty()) {
+            return Float.MAX_VALUE;
+        }
+
         return (float)this.temperatures.stream().mapToDouble(x -> x.getCelsius()).average().getAsDouble();
     }
 
