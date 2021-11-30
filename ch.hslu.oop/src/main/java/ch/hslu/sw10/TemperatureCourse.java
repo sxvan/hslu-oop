@@ -10,15 +10,19 @@ public class TemperatureCourse {
 
     public TemperatureCourse() {
         this.temperatures = new ArrayList<>();
+        this.listeners = new ArrayList<>();
     }
 
     public void add(Temperature temperature) {
-        if (temperature.getCelsius() > this.getMaxCelsius()) {
-            this.fireTemperatureEvent(new TemperatureEvent(this, TemperatureEventType.MAX));
+        float temperatureCelsius = temperature.getCelsius();
+        if (temperatureCelsius > this.getMaxCelsius()) {
+            this.fireTemperatureEvent(new TemperatureEvent(this, TemperatureEventType.MAX, temperatureCelsius));
         }
-        if (temperature.getCelsius() < this.getMinCelsius()) {
-            this.fireTemperatureEvent(new TemperatureEvent(this, TemperatureEventType.MIN));
+
+        if (temperatureCelsius < this.getMinCelsius()) {
+            this.fireTemperatureEvent(new TemperatureEvent(this, TemperatureEventType.MIN, temperatureCelsius));
         }
+
         this.temperatures.add(temperature);
     }
 
@@ -31,6 +35,10 @@ public class TemperatureCourse {
     }
 
     public float getMaxCelsius() {
+        if (this.temperatures.isEmpty()) {
+            return Integer.MIN_VALUE;
+        }
+
         return Collections.max(this.temperatures).getCelsius();
     }
 
@@ -39,6 +47,10 @@ public class TemperatureCourse {
     }
 
     public float getMinCelsius() {
+        if (this.temperatures.isEmpty()) {
+            return Integer.MAX_VALUE;
+        }
+
         return Collections.min(this.temperatures).getCelsius();
     }
 
